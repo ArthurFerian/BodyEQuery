@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 
 // Importar Lista de Array
 import dados from "./src/data/dados.js";
-const { bruxos, varinhas } = dados;
+const { bruxos, varinhas, pocoes } = dados;
 
 // Criar aplicação com Express e configurar para aceitar JSON
 const app = express();
