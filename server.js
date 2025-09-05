@@ -123,6 +123,34 @@ app.get("/pocoes", (req, res) => {
     });
 });
 
+app.post("/varinhas", (req, res) => {
+    const {material, nucleo, comprimento } = req.body;
+
+    if (!material || !nucleo || !comprimento ) {
+        return res.status(400).json({
+            success: false,
+            message: "Material, Nucleo e comprimento é obrigatorio para a criação da varinha",
+    
+        })
+    }
+    
+    const novaVarinha ={
+        id: varinhas.length + 1,
+        material,
+        nucleo,
+        comprimento,
+    };
+    
+    varinhas.push(novaVarinha);
+    
+    res.status(201).json({
+        success: true,
+        message: " Nova Varinha adicionada!",
+        data: novaVarinha,
+    });
+})
+
+
 
 
     
